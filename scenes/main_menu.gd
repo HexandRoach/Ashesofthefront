@@ -10,6 +10,8 @@ var exit_dialog_open := false
 
 
 func _ready() -> void:
+	_load_master_volume()
+
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 	display_mode_option.clear()
@@ -17,11 +19,11 @@ func _ready() -> void:
 	display_mode_option.add_item("FULLSCREEN")
 	display_mode_option.select(1)
 
+	_update_display_mode_selection()
+
 	exit_dialog.get_ok_button().hide()
 	exit_dialog.get_cancel_button().hide()
 	exit_dialog.dialog_close_on_escape = false
-
-	_load_master_volume()
 
 
 func _on_options_button_pressed() -> void:
@@ -73,17 +75,8 @@ func _save_master_volume(volume: float) -> void:
 	var config := ConfigFile.new()
 	var load_error: Error = config.load(SETTINGS_PATH)
 
-	if load_error != OK:
-		print("Creating new settings file.")
-
 	config.set_value("audio", "master_volume", volume)
-
-	var save_error: Error = config.save(SETTINGS_PATH)
-
-	if save_error == OK:
-		print("SAVED master volume: ", volume)
-	else:
-		print("FAILED to save master volume. Error: ", save_error)
+	config.save(SETTINGS_PATH)
 
 
 func _load_master_volume() -> void:
@@ -94,22 +87,26 @@ func _load_master_volume() -> void:
 
 	if load_error == OK:
 		saved_volume = float(config.get_value("audio", "master_volume", 0.5))
-		print("LOADED master volume: ", saved_volume)
-	else:
-		print("No saved volume yet. Using default: 0.5")
 
 	master_volume_slider.set_value_no_signal(saved_volume)
 
 	var master_bus: int = AudioServer.get_bus_index("Master")
+
+	if master_bus == -1:
+		push_warning("Master audio bus was not found.")
+		return
+
 	AudioServer.set_bus_volume_linear(master_bus, saved_volume)
 
 
 func _on_master_volume_slider_value_changed(value: float) -> void:
-	print("SLIDER SIGNAL FIRED: ", value)
-
 	var master_bus: int = AudioServer.get_bus_index("Master")
-	AudioServer.set_bus_volume_linear(master_bus, value)
 
+	if master_bus == -1:
+		push_warning("Master audio bus was not found.")
+		return
+
+	AudioServer.set_bus_volume_linear(master_bus, value)
 	_save_master_volume(value)
 
 
@@ -124,4 +121,4 @@ func _process(_delta: float) -> void:
 		exit_dialog_open = false
 		exit_dialog.hide()
 
-		get_viewport().set_input_as_handled()
+	get_viewport().set_input_as_handled()
