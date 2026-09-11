@@ -209,7 +209,7 @@ custom_minimum_size = Vector2(540, 32)
 layout_mode = 2
 max_value = 1.0
 step = 0.01
-value = 1.0
+value = 0.13
 
 [node name="OptionBackButton" type="Button" parent="OptionsOverlay/OptionsLayout" unique_id=428233879]
 custom_minimum_size = Vector2(180, 52)
@@ -220,13 +220,17 @@ text = "BACK"
 
 [node name="ExitDialog" type="ConfirmationDialog" parent="." unique_id=1431644987]
 oversampling_override = 1.0
-title = "EXIT GAME?"
+title = "ABANDON SQUAD"
 size = Vector2i(250, 100)
-ok_button_text = "EXIT GAME"
-dialog_text = "Are you sure you want to exit?"
+ok_button_text = "YES"
+dialog_text = "Are you sure you want to abandon your squadmates?
+
+[Y] YES — Leave them behind
+[N] NO — Stay with the squad"
+cancel_button_text = "NO"
 
 [connection signal="pressed" from="MenuMargin/MenuLayout/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MenuMargin/MenuLayout/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
 [connection signal="item_selected" from="OptionsOverlay/OptionsLayout/DisplayModeOption" to="." method="_on_display_mode_option_item_selected"]
+[connection signal="value_changed" from="OptionsOverlay/OptionsLayout/MasterVolumeSlider" to="." method="_on_master_volume_slider_value_changed"]
 [connection signal="pressed" from="OptionsOverlay/OptionsLayout/OptionBackButton" to="." method="_on_option_back_button_pressed"]
-[connection signal="confirmed" from="ExitDialog" to="." method="_on_exit_dialog_confirmed"]
