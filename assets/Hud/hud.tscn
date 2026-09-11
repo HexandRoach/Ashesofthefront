@@ -1,0 +1,381 @@
+[gd_scene format=3 uid="uid://0cjjwr4gvivn"]
+
+[ext_resource type="Texture2D" uid="uid://cpi5no7qoyr5s" path="res://ui/icons/63F44AE1-0D99-4129-AA74-AA3F30B94023.png" id="1_1dmq4"]
+[ext_resource type="Texture2D" uid="uid://cnyicjd1s88i4" path="res://ui/icons/content.png" id="1_gj2lf"]
+[ext_resource type="Texture2D" uid="uid://biuxbx72cbs76" path="res://ui/icons/97707FD4-D757-46E1-A858-E2A44FCDDFBA.png" id="1_uouvn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_moji0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uouvn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rpb1b"]
+bg_color = Color(0.047058824, 0.09411765, 0.13333334, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7xrwy"]
+bg_color = Color(1, 0.6901961, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="HUD" type="CanvasLayer" unique_id=431169564]
+layer = 10
+
+[node name="HUDRoot" type="Control" parent="." unique_id=1416212387]
+layout_mode = 3
+anchor_right = 1.003
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = -3.4560547
+offset_bottom = -1.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="CompassPanel" type="PanelContainer" parent="HUDRoot" unique_id=1377472063]
+custom_minimum_size = Vector2(500, 22)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -260.0
+offset_top = 24.0
+offset_right = 260.0
+offset_bottom = 62.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_moji0")
+
+[node name="CompassViewport" type="Control" parent="HUDRoot/CompassPanel" unique_id=1249847090]
+custom_minimum_size = Vector2(-30, -30)
+clip_contents = true
+layout_mode = 2
+offset_transform_enabled = true
+mouse_filter = 2
+
+[node name="CompassStrip" type="Label" parent="HUDRoot/CompassPanel/CompassViewport" unique_id=1340689048]
+modulate = Color(0.9098039, 0.95686275, 0.98039216, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 15
+text = "             W      NW      N      NE      E      SE      S      SW      W      NW      N
+"
+
+[node name="CenterMarker" type="Label" parent="HUDRoot/CompassPanel/CompassViewport" unique_id=546116806]
+modulate = Color(1, 0.6901961, 0, 1)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 18
+text = "▼"
+horizontal_alignment = 1
+
+[node name="MatchStatusPanel" type="PanelContainer" parent="HUDRoot" unique_id=1473865819]
+custom_minimum_size = Vector2(640, 82)
+custom_maximum_size = Vector2(-1, 70)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.0
+offset_right = 320.0
+offset_bottom = 70.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_uouvn")
+
+[node name="MatchStatusColumn" type="VBoxContainer" parent="HUDRoot/MatchStatusPanel" unique_id=993343786]
+layout_mode = 2
+
+[node name="MatchRow" type="HBoxContainer" parent="HUDRoot/MatchStatusPanel/MatchStatusColumn" unique_id=1826024660]
+layout_mode = 2
+
+[node name="TeamALabe1" type="Label" parent="HUDRoot/MatchStatusPanel/MatchStatusColumn/MatchRow" unique_id=838407983]
+layout_mode = 2
+
+[node name="TeamAScore" type="Label" parent="HUDRoot/MatchStatusPanel/MatchStatusColumn/MatchRow" unique_id=371351085]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="HUDRoot/MatchStatusPanel/MatchStatusColumn/MatchRow" unique_id=263514080]
+layout_mode = 2
+
+[node name="TimerLabe1" type="Label" parent="HUDRoot/MatchStatusPanel/MatchStatusColumn/MatchRow" unique_id=915223630]
+layout_mode = 2
+
+[node name="Spacer2" type="Control" parent="HUDRoot/MatchStatusPanel/MatchStatusColumn/MatchRow" unique_id=462550078]
+layout_mode = 2
+
+[node name="TeamBScore" type="Label" parent="HUDRoot/MatchStatusPanel/MatchStatusColumn/MatchRow" unique_id=1558390663]
+layout_mode = 2
+
+[node name="TeamBLabel1" type="Label" parent="HUDRoot/MatchStatusPanel/MatchStatusColumn/MatchRow" unique_id=961269531]
+layout_mode = 2
+
+[node name="MatchPhaseLabel" type="Label" parent="HUDRoot/MatchStatusPanel/MatchStatusColumn" unique_id=129787855]
+layout_mode = 2
+
+[node name="PlayerStatusPanel" type="PanelContainer" parent="HUDRoot" unique_id=1882018303]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -177.0
+offset_right = 643.0
+grow_vertical = 0
+offset_transform_enabled = true
+
+[node name="StatusRow" type="HBoxContainer" parent="HUDRoot/PlayerStatusPanel" unique_id=943375881]
+layout_mode = 2
+
+[node name="PortraitFrame" type="PanelContainer" parent="HUDRoot/PlayerStatusPanel/StatusRow" unique_id=1389557845]
+custom_minimum_size = Vector2(140, 140)
+layout_mode = 2
+
+[node name="PlayerPortrait" type="TextureRect" parent="HUDRoot/PlayerStatusPanel/StatusRow/PortraitFrame" unique_id=1380476661]
+layout_mode = 2
+texture = ExtResource("1_uouvn")
+expand_mode = 1
+
+[node name="StatusColumn" type="VBoxContainer" parent="HUDRoot/PlayerStatusPanel/StatusRow" unique_id=1022321213]
+custom_minimum_size = Vector2(320, 140)
+layout_mode = 2
+
+[node name="PlayerName" type="Label" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn" unique_id=1624266785]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.99512166, 0.9079838, 0.90525275, 1)
+theme_override_font_sizes/font_size = 18
+text = "OPERATOR // ROACH"
+
+[node name="HealthRow" type="HBoxContainer" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn" unique_id=248272391]
+layout_mode = 2
+
+[node name="HealthLabel" type="Label" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/HealthRow" unique_id=2100076787]
+custom_minimum_size = Vector2(34, 0)
+layout_mode = 2
+text = "HP"
+
+[node name="HealthBar" type="ProgressBar" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/HealthRow" unique_id=1885219338]
+custom_minimum_size = Vector2(220, 18)
+layout_mode = 2
+value = 100.0
+show_percentage = false
+
+[node name="HealthValue" type="Label" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/HealthRow" unique_id=1642008815]
+custom_minimum_size = Vector2(46, 0)
+layout_mode = 2
+text = "100"
+
+[node name="StaminaRow" type="HBoxContainer" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn" unique_id=409523554]
+layout_mode = 2
+
+[node name="StaminaLabel" type="Label" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/StaminaRow" unique_id=1553800221]
+layout_mode = 2
+text = "STM"
+
+[node name="StaminaBar" type="ProgressBar" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/StaminaRow" unique_id=1310664477]
+custom_minimum_size = Vector2(220, 18)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_rpb1b")
+theme_override_styles/fill = SubResource("StyleBoxFlat_7xrwy")
+value = 100.0
+show_percentage = false
+
+[node name="StaminaValue" type="Label" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/StaminaRow" unique_id=2049687188]
+layout_mode = 2
+text = "100"
+
+[node name="ClassItemRow" type="HBoxContainer" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn" unique_id=1282038394]
+layout_mode = 2
+
+[node name="ClassItemIcon" type="TextureRect" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/ClassItemRow" unique_id=1304834433]
+custom_minimum_size = Vector2(55, 55)
+layout_mode = 2
+texture = ExtResource("1_1dmq4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ClassItemText" type="Label" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/ClassItemRow" unique_id=402707532]
+layout_mode = 2
+text = "MEDIC PACKS              3 / 3"
+
+[node name="SkillPanel" type="VBoxContainer" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/ClassItemRow" unique_id=1061688674]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="SkillSeparator" type="HSeparator" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/ClassItemRow/SkillPanel" unique_id=1153434501]
+layout_mode = 2
+
+[node name="FieldDisciplineSkill" type="VBoxContainer" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/ClassItemRow/SkillPanel" unique_id=1357668842]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="SkillInfoRow" type="HBoxContainer" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/ClassItemRow/SkillPanel/FieldDisciplineSkill" unique_id=586837402]
+layout_mode = 2
+
+[node name="FieldDisciplineName" type="Label" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/ClassItemRow/SkillPanel/FieldDisciplineSkill/SkillInfoRow" unique_id=2124662972]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "FIELD DISCIPLINE"
+
+[node name="FieldDisciplineSpacer" type="Control" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/ClassItemRow/SkillPanel/FieldDisciplineSkill/SkillInfoRow" unique_id=2053219816]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FieldDisciplineLevel" type="Label" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/ClassItemRow/SkillPanel/FieldDisciplineSkill/SkillInfoRow" unique_id=212616846]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "LV 0   "
+
+[node name="FieldDisciplineXPText" type="Label" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/ClassItemRow/SkillPanel/FieldDisciplineSkill/SkillInfoRow" unique_id=302852289]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "0 / 40  XP"
+
+[node name="FieldDisciplineXPBar" type="ProgressBar" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/ClassItemRow/SkillPanel/FieldDisciplineSkill" unique_id=2132409015]
+custom_minimum_size = Vector2(240, 6)
+layout_mode = 2
+max_value = 40.0
+show_percentage = false
+
+[node name="CombatArmsSkill" type="VBoxContainer" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/ClassItemRow/SkillPanel" unique_id=1290014343]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="SkillInfoRow" type="HBoxContainer" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/ClassItemRow/SkillPanel/CombatArmsSkill" unique_id=345896819]
+layout_mode = 2
+
+[node name="CombatArmsName" type="Label" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/ClassItemRow/SkillPanel/CombatArmsSkill/SkillInfoRow" unique_id=1268981601]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "CombatArmsSkill"
+
+[node name="CombatArmsSpacer" type="Control" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/ClassItemRow/SkillPanel/CombatArmsSkill/SkillInfoRow" unique_id=1386442714]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CombatArmsLevel" type="Label" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/ClassItemRow/SkillPanel/CombatArmsSkill/SkillInfoRow" unique_id=1346848033]
+layout_mode = 2
+text = "LV 0   "
+
+[node name="CombatArmsXPText" type="Label" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/ClassItemRow/SkillPanel/CombatArmsSkill/SkillInfoRow" unique_id=2129731327]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "0 / 40  XP"
+
+[node name="CombatArmsXPBar" type="ProgressBar" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/ClassItemRow/SkillPanel/CombatArmsSkill" unique_id=902184044]
+custom_minimum_size = Vector2(240, 6)
+layout_mode = 2
+max_value = 40.0
+show_percentage = false
+
+[node name="ClassSkill" type="VBoxContainer" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/ClassItemRow/SkillPanel" unique_id=378659025]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="SkillInfoRow" type="HBoxContainer" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/ClassItemRow/SkillPanel/ClassSkill" unique_id=967879939]
+layout_mode = 2
+
+[node name="ClassSkillName" type="Label" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/ClassItemRow/SkillPanel/ClassSkill/SkillInfoRow" unique_id=953689318]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "Medical Response"
+
+[node name="ClassSkillSpacer" type="Control" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/ClassItemRow/SkillPanel/ClassSkill/SkillInfoRow" unique_id=847495846]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ClassSClassSkillXPTextkillLevel" type="Label" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/ClassItemRow/SkillPanel/ClassSkill/SkillInfoRow" unique_id=1435736192]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "LV 0   "
+
+[node name="SkillXpText" type="Label" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/ClassItemRow/SkillPanel/ClassSkill/SkillInfoRow" unique_id=51669441]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "0 / 40  XP"
+
+[node name="ClassSkillXPBar" type="ProgressBar" parent="HUDRoot/PlayerStatusPanel/StatusRow/StatusColumn/ClassItemRow/SkillPanel/ClassSkill" unique_id=434548238]
+custom_minimum_size = Vector2(240, 6)
+layout_mode = 2
+max_value = 40.0
+show_percentage = false
+
+[node name="WeaponPanel" type="PanelContainer" parent="HUDRoot" unique_id=1436652788]
+custom_minimum_size = Vector2(280, 150)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -280.0
+offset_top = -150.0
+grow_horizontal = 0
+grow_vertical = 0
+offset_transform_enabled = true
+
+[node name="WeaponColumn" type="VBoxContainer" parent="HUDRoot/WeaponPanel" unique_id=568336983]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="CurrentWeaponImage" type="TextureRect" parent="HUDRoot/WeaponPanel/WeaponColumn" unique_id=828101409]
+custom_minimum_size = Vector2(210, 64)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("1_gj2lf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="WeaponName" type="Label" parent="HUDRoot/WeaponPanel/WeaponColumn" unique_id=75321874]
+modulate = Color(0.6117647, 0.6862745, 0.7529412, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "MP 40"
+horizontal_alignment = 2
+
+[node name="FireModeLabel" type="Label" parent="HUDRoot/WeaponPanel/WeaponColumn" unique_id=504399003]
+modulate = Color(1, 0.6901961, 0, 1)
+layout_mode = 2
+text = "AUTO"
+horizontal_alignment = 2
+
+[node name="AmmoRow" type="HBoxContainer" parent="HUDRoot/WeaponPanel/WeaponColumn/FireModeLabel" unique_id=1338074570]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CurrentAmmo" type="Label" parent="HUDRoot/WeaponPanel/WeaponColumn/FireModeLabel/AmmoRow" unique_id=508044751]
+modulate = Color(0.9098039, 0.95686275, 0.95686275, 1)
+layout_mode = 2
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 30
+text = "30 "
+horizontal_alignment = 2
+
+[node name="ReserveAmmo" type="Label" parent="HUDRoot/WeaponPanel/WeaponColumn/FireModeLabel/AmmoRow" unique_id=1549772976]
+modulate = Color(0.6117647, 0.6862745, 0.7529412, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "/ 100"
+vertical_alignment = 2
+
+[node name="WeaponRow" type="HBoxContainer" parent="HUDRoot/WeaponPanel/WeaponColumn" unique_id=106603875]
+layout_mode = 2
+
+[node name="WeaponIcon" type="TextureRect" parent="HUDRoot/WeaponPanel/WeaponColumn/WeaponRow" unique_id=104627498]
+layout_mode = 2
+
+[node name="ObjectivePanel" type="PanelContainer" parent="HUDRoot" unique_id=368049450]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ObjectiveColumn" type="VBoxContainer" parent="HUDRoot/ObjectivePanel" unique_id=799819691]
+layout_mode = 2
+
+[node name="OperationLabel" type="Label" parent="HUDRoot/ObjectivePanel/ObjectiveColumn" unique_id=951203709]
+layout_mode = 2
+
+[node name="ObjectiveTitle" type="Label" parent="HUDRoot/ObjectivePanel/ObjectiveColumn" unique_id=1156688492]
+layout_mode = 2
+
+[node name="ObjectiveBar" type="ProgressBar" parent="HUDRoot/ObjectivePanel/ObjectiveColumn" unique_id=1573611268]
+layout_mode = 2
