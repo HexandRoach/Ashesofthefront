@@ -207,6 +207,9 @@ text = "MASTER VOLUME"
 [node name="MasterVolumeSlider" type="HSlider" parent="OptionsOverlay/OptionsLayout" unique_id=1348553565]
 custom_minimum_size = Vector2(540, 32)
 layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
 
 [node name="OptionBackButton" type="Button" parent="OptionsOverlay/OptionsLayout" unique_id=428233879]
 custom_minimum_size = Vector2(180, 52)

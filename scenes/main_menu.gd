@@ -1,6 +1,7 @@
 extends Control
 
 @onready var display_mode_option: OptionButton = $OptionsOverlay/OptionsLayout/DisplayModeOption
+@onready var master_volume_slider: HSlider = $OptionsOverlay/OptionsLayout/MasterVolumeSlider
 
 
 func _ready() -> void:
@@ -12,6 +13,11 @@ func _ready() -> void:
 
 	await get_tree().process_frame
 	display_mode_option.select(1)
+
+	master_volume_slider.value = 0.5
+
+	var master_bus := AudioServer.get_bus_index("Master")
+	AudioServer.set_bus_volume_linear(master_bus, 0.5)
 
 
 func _on_options_button_pressed() -> void:
@@ -54,3 +60,8 @@ func _on_exit_game_button_pressed() -> void:
 
 func _on_exit_dialog_confirmed() -> void:
 	get_tree().quit()
+
+
+func _on_master_volume_slider_value_changed(value: float) -> void:
+	var master_bus := AudioServer.get_bus_index("Master")
+	AudioServer.set_bus_volume_linear(master_bus, value)
