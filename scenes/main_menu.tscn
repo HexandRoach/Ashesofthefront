@@ -1,0 +1,229 @@
+[gd_scene format=3 uid="uid://dredxbpbhg4xw"]
+
+[ext_resource type="Script" uid="uid://dyjwt6jg84yfy" path="res://scenes/main_menu.gd" id="1_bqqt6"]
+[ext_resource type="VideoStream" uid="uid://c5beg8amufh41" path="res://assets/backgrounds/ashesofthefront_menu.ogv" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://cm0vfuds7op46" path="res://assets/Logo/hexandroach.png" id="2_ekxnf"]
+
+[node name="MainMenu" type="Control" unique_id=1054358732]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bqqt6")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1291346994]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.02745098, 0.06666667, 0.08627451, 1)
+
+[node name="MenuBackgroundVideo" type="VideoStreamPlayer" parent="." unique_id=1164567466]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stream = ExtResource("1_l6cm7")
+autoplay = true
+expand = true
+loop = true
+
+[node name="MenuMargin" type="MarginContainer" parent="." unique_id=1476726832]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_right = 1575.0
+offset_bottom = 791.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 110
+theme_override_constants/margin_right = 1050
+theme_override_constants/margin_bottom = 100
+
+[node name="MenuLayout" type="VBoxContainer" parent="MenuMargin" unique_id=1669192195]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 20
+
+[node name="TitleLabel" type="Label" parent="MenuMargin/MenuLayout" unique_id=135747200]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.8352941, 0.8509804, 0.8392157, 1)
+theme_override_font_sizes/font_size = 72
+text = "ASHES OF THE FRONT"
+
+[node name="SubtitleLabel" type="Label" parent="MenuMargin/MenuLayout" unique_id=107592937]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4627451, 0.7176471, 0.7607843, 1)
+theme_override_font_sizes/font_size = 24
+text = "ONLINE FRONT"
+
+[node name="TitleSpacer" type="Control" parent="MenuMargin/MenuLayout" unique_id=2030317760]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+
+[node name="PlayOnlineButton" type="Button" parent="MenuMargin/MenuLayout" unique_id=61332211]
+custom_minimum_size = Vector2(220, 42)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 26
+text = "PLAY ONLINE"
+alignment = 0
+
+[node name="HostGameButton" type="Button" parent="MenuMargin/MenuLayout" unique_id=1888068276]
+custom_minimum_size = Vector2(220, 46)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 26
+text = "HOST GAME"
+alignment = 0
+
+[node name="OptionsButton" type="Button" parent="MenuMargin/MenuLayout" unique_id=1844004238]
+custom_minimum_size = Vector2(220, 46)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 26
+text = "OPTIONS"
+alignment = 0
+
+[node name="ProfileButton" type="Button" parent="MenuMargin/MenuLayout" unique_id=1804873205]
+custom_minimum_size = Vector2(220, 46)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 26
+text = "PROFILE"
+alignment = 0
+
+[node name="CreditsButton" type="Button" parent="MenuMargin/MenuLayout" unique_id=1852313203]
+custom_minimum_size = Vector2(220, 46)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 26
+text = "CREDITS"
+alignment = 0
+
+[node name="ExitGameButton" type="Button" parent="MenuMargin/MenuLayout" unique_id=1837595524]
+custom_minimum_size = Vector2(220, 46)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 26
+text = "EXIT GAME"
+alignment = 0
+
+[node name="FooterAnchor" type="Control" parent="." unique_id=1289809666]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -374.0
+offset_top = -107.0
+offset_right = -33.0
+offset_bottom = -64.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="FooterBranding" type="VBoxContainer" parent="FooterAnchor" unique_id=536338861]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CompanyLogo" type="TextureRect" parent="FooterAnchor/FooterBranding" unique_id=328025252]
+custom_minimum_size = Vector2(300, 95)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+texture = ExtResource("2_ekxnf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="EarlyAcessLabel" type="Label" parent="FooterAnchor/FooterBranding" unique_id=1437166476]
+custom_minimum_size = Vector2(210, 32)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8352941, 0.8509804, 0.8392157, 1)
+theme_override_font_sizes/font_size = 20
+text = "EARLY ACCESS
+© 2026 HexandRoach"
+horizontal_alignment = 1
+
+[node name="OptionsOverlay" type="ColorRect" parent="." unique_id=1587184555]
+visible = false
+layout_mode = 0
+offset_left = 1546.0
+offset_top = 1012.5
+offset_right = 1887.0
+offset_bottom = 1012.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OptionsLayout" type="VBoxContainer" parent="OptionsOverlay" unique_id=844920644]
+custom_minimum_size = Vector2(540, 0)
+layout_mode = 0
+offset_left = -896.0
+offset_top = -627.5
+offset_right = -246.0
+offset_bottom = -287.5
+
+[node name="OptionsTitle" type="Label" parent="OptionsOverlay/OptionsLayout" unique_id=900871477]
+custom_minimum_size = Vector2(540, 65)
+layout_mode = 2
+theme_override_font_sizes/font_size = 52
+text = "OPTIONS"
+horizontal_alignment = 1
+
+[node name="DisplayModeLabel" type="Label" parent="OptionsOverlay/OptionsLayout" unique_id=2032978562]
+custom_minimum_size = Vector2(540, 28)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "DISPLAY MODE"
+
+[node name="DisplayModeOption" type="OptionButton" parent="OptionsOverlay/OptionsLayout" unique_id=2035980341]
+custom_minimum_size = Vector2(540, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+
+[node name="MasterVolumeLabel" type="Label" parent="OptionsOverlay/OptionsLayout" unique_id=610710322]
+custom_minimum_size = Vector2(540, 28)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "MASTER VOLUME"
+
+[node name="MasterVolumeSlider" type="HSlider" parent="OptionsOverlay/OptionsLayout" unique_id=1348553565]
+custom_minimum_size = Vector2(540, 32)
+layout_mode = 2
+
+[node name="OptionBackButton" type="Button" parent="OptionsOverlay/OptionsLayout" unique_id=428233879]
+custom_minimum_size = Vector2(180, 52)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 28
+text = "BACK"
+
+[node name="ExitDialog" type="ConfirmationDialog" parent="." unique_id=1431644987]
+oversampling_override = 1.0
+title = "EXIT GAME?"
+size = Vector2i(250, 100)
+ok_button_text = "EXIT GAME"
+dialog_text = "Are you sure you want to exit?"
+
+[connection signal="pressed" from="MenuMargin/MenuLayout/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MenuMargin/MenuLayout/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
+[connection signal="item_selected" from="OptionsOverlay/OptionsLayout/DisplayModeOption" to="." method="_on_display_mode_option_item_selected"]
+[connection signal="pressed" from="OptionsOverlay/OptionsLayout/OptionBackButton" to="." method="_on_option_back_button_pressed"]
+[connection signal="confirmed" from="ExitDialog" to="." method="_on_exit_dialog_confirmed"]
