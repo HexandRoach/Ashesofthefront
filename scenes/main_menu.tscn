@@ -163,7 +163,6 @@ text = "EARLY ACCESS
 horizontal_alignment = 1
 
 [node name="OptionsOverlay" type="ColorRect" parent="." unique_id=1587184555]
-visible = false
 layout_mode = 0
 offset_left = 1546.0
 offset_top = 1012.5
@@ -175,10 +174,10 @@ grow_vertical = 2
 [node name="OptionsLayout" type="VBoxContainer" parent="OptionsOverlay" unique_id=844920644]
 custom_minimum_size = Vector2(540, 0)
 layout_mode = 0
-offset_left = -896.0
-offset_top = -627.5
-offset_right = -246.0
-offset_bottom = -287.5
+offset_left = -976.0
+offset_top = -671.5
+offset_right = -326.0
+offset_bottom = -258.5
 
 [node name="OptionsTitle" type="Label" parent="OptionsOverlay/OptionsLayout" unique_id=900871477]
 custom_minimum_size = Vector2(540, 65)
@@ -186,17 +185,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 52
 text = "OPTIONS"
 horizontal_alignment = 1
-
-[node name="DisplayModeLabel" type="Label" parent="OptionsOverlay/OptionsLayout" unique_id=2032978562]
-custom_minimum_size = Vector2(540, 28)
-layout_mode = 2
-theme_override_font_sizes/font_size = 22
-text = "DISPLAY MODE"
-
-[node name="DisplayModeOption" type="OptionButton" parent="OptionsOverlay/OptionsLayout" unique_id=2035980341]
-custom_minimum_size = Vector2(540, 50)
-layout_mode = 2
-theme_override_font_sizes/font_size = 26
 
 [node name="MasterVolumeLabel" type="Label" parent="OptionsOverlay/OptionsLayout" unique_id=610710322]
 custom_minimum_size = Vector2(540, 28)
@@ -218,6 +206,112 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 28
 text = "BACK"
 
+[node name="CategoryButtons" type="VBoxContainer" parent="OptionsOverlay/OptionsLayout" unique_id=1233529464]
+layout_mode = 2
+
+[node name="VideoSettingsButton" type="Button" parent="OptionsOverlay/OptionsLayout/CategoryButtons" unique_id=2145365210]
+layout_mode = 2
+text = "VIDEO SETTINGS"
+
+[node name="GraphicsSettingsButton" type="Button" parent="OptionsOverlay/OptionsLayout/CategoryButtons" unique_id=160637853]
+layout_mode = 2
+text = "GRAPHICS SETTINGS"
+
+[node name="GameplaySettingsButton" type="Button" parent="OptionsOverlay/OptionsLayout/CategoryButtons" unique_id=1414758863]
+layout_mode = 2
+text = "GAMEPLAY SETTINGS"
+
+[node name="LanguageSettingsButton" type="Button" parent="OptionsOverlay/OptionsLayout/CategoryButtons" unique_id=1595998681]
+layout_mode = 2
+text = "LANGUAGE SETTINGS"
+
+[node name="ControlSettingsButton" type="Button" parent="OptionsOverlay/OptionsLayout/CategoryButtons" unique_id=1164170652]
+layout_mode = 2
+text = "CONTROL SETTINGS"
+
+[node name="AdvancedSettingsButton" type="Button" parent="OptionsOverlay/OptionsLayout/CategoryButtons" unique_id=1148217930]
+layout_mode = 2
+text = "ADVANCED SETTINGS"
+
+[node name="SettingsPages" type="Control" parent="OptionsOverlay/OptionsLayout" unique_id=1837979736]
+layout_mode = 2
+
+[node name="VideoPage" type="VBoxContainer" parent="OptionsOverlay/OptionsLayout/SettingsPages" unique_id=384284035]
+layout_mode = 0
+offset_left = 677.0
+offset_top = -296.0
+offset_right = 1217.0
+offset_bottom = 2.0
+
+[node name="VideoPageTitle" type="Label" parent="OptionsOverlay/OptionsLayout/SettingsPages/VideoPage" unique_id=751199901]
+layout_mode = 2
+text = "VIDEO SETTINGS"
+
+[node name="DisplayModeLabel" type="Label" parent="OptionsOverlay/OptionsLayout/SettingsPages/VideoPage" unique_id=2032978562]
+custom_minimum_size = Vector2(540, 28)
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "DISPLAY MODE"
+
+[node name="DisplayModeOption" type="OptionButton" parent="OptionsOverlay/OptionsLayout/SettingsPages/VideoPage" unique_id=2035980341]
+custom_minimum_size = Vector2(540, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+
+[node name="ResolutionLabel" type="Label" parent="OptionsOverlay/OptionsLayout/SettingsPages/VideoPage" unique_id=1457507820]
+layout_mode = 2
+text = "RESOLUTION"
+
+[node name="ResolutionOption" type="OptionButton" parent="OptionsOverlay/OptionsLayout/SettingsPages/VideoPage" unique_id=1850179644]
+layout_mode = 2
+item_count = 5
+popup/item_0/text = "1280 x 720"
+popup/item_0/id = 1
+popup/item_1/text = "1600 x 900"
+popup/item_1/id = 2
+popup/item_2/text = "1920 x 1080"
+popup/item_2/id = 0
+popup/item_3/text = "2560 x 1440"
+popup/item_3/id = 3
+popup/item_4/text = "800 x 500"
+popup/item_4/id = 4
+
+[node name="VSyncLabel" type="Label" parent="OptionsOverlay/OptionsLayout/SettingsPages/VideoPage" unique_id=1399083630]
+layout_mode = 2
+text = "V-SYNC"
+
+[node name="VSyncOption" type="OptionButton" parent="OptionsOverlay/OptionsLayout/SettingsPages/VideoPage" unique_id=1739411494]
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "OFF"
+popup/item_0/id = 0
+popup/item_1/text = "ON"
+popup/item_1/id = 1
+popup/item_2/text = "ADAPTIVE"
+popup/item_2/id = 2
+
+[node name="FrameRateLimitLabel" type="Label" parent="OptionsOverlay/OptionsLayout/SettingsPages/VideoPage" unique_id=247321249]
+layout_mode = 2
+text = "FRAME RATE LIMIT"
+
+[node name="FrameRateLimitOption" type="OptionButton" parent="OptionsOverlay/OptionsLayout/SettingsPages/VideoPage" unique_id=1177042978]
+layout_mode = 2
+item_count = 5
+popup/item_0/text = "30 FPS"
+popup/item_0/id = 0
+popup/item_1/text = "60 FPS"
+popup/item_1/id = 1
+popup/item_2/text = "120 FPS"
+popup/item_2/id = 2
+popup/item_3/text = "144 FPS"
+popup/item_3/id = 3
+popup/item_4/text = "UNLIMITED"
+popup/item_4/id = 4
+
+[node name="ResetSettingsButton" type="Button" parent="OptionsOverlay/OptionsLayout/SettingsPages/VideoPage" unique_id=1995534440]
+layout_mode = 2
+text = "RESET SETTINGS"
+
 [node name="ExitDialog" type="ConfirmationDialog" parent="." unique_id=1431644987]
 oversampling_override = 1.0
 title = "ABANDON SQUAD"
@@ -229,8 +323,26 @@ dialog_text = "Are you sure you want to abandon your squadmates?
 [N] NO — Stay with the squad"
 cancel_button_text = "NO"
 
+[node name="VideoConfirmDialog" type="ConfirmationDialog" parent="." unique_id=1388018522]
+title = "Keep Display Settings?"
+ok_button_text = "KEEP SETTINGS"
+dialog_text = "Keep these display settings?"
+dialog_close_on_escape = false
+cancel_button_text = "REVERT"
+
+[node name="VideoConfirmTimer" type="Timer" parent="." unique_id=1166550920]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
 [connection signal="pressed" from="MenuMargin/MenuLayout/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MenuMargin/MenuLayout/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
-[connection signal="item_selected" from="OptionsOverlay/OptionsLayout/DisplayModeOption" to="." method="_on_display_mode_option_item_selected"]
 [connection signal="value_changed" from="OptionsOverlay/OptionsLayout/MasterVolumeSlider" to="." method="_on_master_volume_slider_value_changed"]
 [connection signal="pressed" from="OptionsOverlay/OptionsLayout/OptionBackButton" to="." method="_on_option_back_button_pressed"]
+[connection signal="pressed" from="OptionsOverlay/OptionsLayout/CategoryButtons/VideoSettingsButton" to="." method="_on_video_settings_button_pressed"]
+[connection signal="item_selected" from="OptionsOverlay/OptionsLayout/SettingsPages/VideoPage/DisplayModeOption" to="." method="_on_display_mode_option_item_selected"]
+[connection signal="item_selected" from="OptionsOverlay/OptionsLayout/SettingsPages/VideoPage/ResolutionOption" to="." method="_on_resolution_option_item_selected"]
+[connection signal="pressed" from="OptionsOverlay/OptionsLayout/SettingsPages/VideoPage/ResetSettingsButton" to="." method="_on_reset_settings_button_pressed"]
+[connection signal="canceled" from="VideoConfirmDialog" to="." method="_on_video_confirm_dialog_canceled"]
+[connection signal="confirmed" from="VideoConfirmDialog" to="." method="_on_video_confirm_dialog_confirmed"]
+[connection signal="timeout" from="VideoConfirmTimer" to="." method="_on_video_confirm_timer_timeout"]
