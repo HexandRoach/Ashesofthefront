@@ -312,6 +312,95 @@ popup/item_4/id = 4
 layout_mode = 2
 text = "RESET SETTINGS"
 
+[node name="GraphicsPage" type="VBoxContainer" parent="OptionsOverlay/OptionsLayout/SettingsPages" unique_id=921909917]
+custom_minimum_size = Vector2(540, 333)
+layout_mode = 0
+offset_right = 540.0
+offset_bottom = 333.0
+
+[node name="GraphicsTitle" type="Label" parent="OptionsOverlay/OptionsLayout/SettingsPages/GraphicsPage" unique_id=1221670294]
+layout_mode = 2
+text = "GRAPHICS SETTINGS"
+
+[node name="GraphicsScrollContainer" type="ScrollContainer" parent="OptionsOverlay/OptionsLayout/SettingsPages/GraphicsPage" unique_id=1199019689]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GraphicsContent" type="VBoxContainer" parent="OptionsOverlay/OptionsLayout/SettingsPages/GraphicsPage/GraphicsScrollContainer" unique_id=2077115826]
+custom_minimum_size = Vector2(540, 787)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 18
+
+[node name="GraphicsSettingsButton" type="Button" parent="OptionsOverlay/OptionsLayout/SettingsPages/GraphicsPage/GraphicsScrollContainer/GraphicsContent" unique_id=1085627002]
+layout_mode = 2
+text = "GRAPHICS SETTINGS"
+
+[node name="PresetHeading" type="Label" parent="OptionsOverlay/OptionsLayout/SettingsPages/GraphicsPage/GraphicsScrollContainer/GraphicsContent" unique_id=1008171528]
+layout_mode = 2
+text = "PRESET"
+
+[node name="GraphicsPresetLabel" type="Label" parent="OptionsOverlay/OptionsLayout/SettingsPages/GraphicsPage/GraphicsScrollContainer/GraphicsContent" unique_id=439550569]
+layout_mode = 2
+text = "GRAPHICS PRESET"
+
+[node name="GraphicsPresetOption" type="OptionButton" parent="OptionsOverlay/OptionsLayout/SettingsPages/GraphicsPage/GraphicsScrollContainer/GraphicsContent" unique_id=1532576016]
+layout_mode = 2
+
+[node name="ImageQualityHeading" type="Label" parent="OptionsOverlay/OptionsLayout/SettingsPages/GraphicsPage/GraphicsScrollContainer/GraphicsContent" unique_id=619755987]
+layout_mode = 2
+text = "IMAGE QUALITY"
+
+[node name="RenderScaleLabel" type="Label" parent="OptionsOverlay/OptionsLayout/SettingsPages/GraphicsPage/GraphicsScrollContainer/GraphicsContent" unique_id=1044021031]
+layout_mode = 2
+text = "RENDER SCALE"
+
+[node name="RenderScaleOption" type="OptionButton" parent="OptionsOverlay/OptionsLayout/SettingsPages/GraphicsPage/GraphicsScrollContainer/GraphicsContent" unique_id=1022163063]
+layout_mode = 2
+
+[node name="AntiAliasingLabel" type="Label" parent="OptionsOverlay/OptionsLayout/SettingsPages/GraphicsPage/GraphicsScrollContainer/GraphicsContent" unique_id=1736768863]
+layout_mode = 2
+text = "ANTI-ALIASING"
+
+[node name="AntiAliasingOption" type="OptionButton" parent="OptionsOverlay/OptionsLayout/SettingsPages/GraphicsPage/GraphicsScrollContainer/GraphicsContent" unique_id=577115683]
+layout_mode = 2
+
+[node name="LightingShadowsHeading" type="Label" parent="OptionsOverlay/OptionsLayout/SettingsPages/GraphicsPage/GraphicsScrollContainer/GraphicsContent" unique_id=2063211906]
+layout_mode = 2
+text = "LIGHTING & SHADOWS"
+
+[node name="ShadowQualityLabel" type="Label" parent="OptionsOverlay/OptionsLayout/SettingsPages/GraphicsPage/GraphicsScrollContainer/GraphicsContent" unique_id=1097182979]
+layout_mode = 2
+text = "SHADOW QUALITY"
+
+[node name="ShadowQualityOption" type="OptionButton" parent="OptionsOverlay/OptionsLayout/SettingsPages/GraphicsPage/GraphicsScrollContainer/GraphicsContent" unique_id=1183388839]
+layout_mode = 2
+
+[node name="GlowBloomLabel" type="Label" parent="OptionsOverlay/OptionsLayout/SettingsPages/GraphicsPage/GraphicsScrollContainer/GraphicsContent" unique_id=1422302536]
+layout_mode = 2
+text = "GLOW / BLOOM"
+
+[node name="GlowBloomOption" type="OptionButton" parent="OptionsOverlay/OptionsLayout/SettingsPages/GraphicsPage/GraphicsScrollContainer/GraphicsContent" unique_id=1661717]
+layout_mode = 2
+
+[node name="AmbientOcclusionLabel" type="Label" parent="OptionsOverlay/OptionsLayout/SettingsPages/GraphicsPage/GraphicsScrollContainer/GraphicsContent" unique_id=556658486]
+layout_mode = 2
+text = "AMBIENT OCCLUSION"
+
+[node name="AmbientOcclusionOption" type="OptionButton" parent="OptionsOverlay/OptionsLayout/SettingsPages/GraphicsPage/GraphicsScrollContainer/GraphicsContent" unique_id=840716906]
+layout_mode = 2
+
+[node name="ScreenSpaceReflectionsLabel" type="Label" parent="OptionsOverlay/OptionsLayout/SettingsPages/GraphicsPage/GraphicsScrollContainer/GraphicsContent" unique_id=1189838745]
+layout_mode = 2
+text = "SCREEN-SPACE REFLECTIONS"
+
+[node name="ScreenSpaceReflectionsOption" type="OptionButton" parent="OptionsOverlay/OptionsLayout/SettingsPages/GraphicsPage/GraphicsScrollContainer/GraphicsContent" unique_id=2016478715]
+layout_mode = 2
+
+[node name="GraphicsBackButton" type="Button" parent="OptionsOverlay/OptionsLayout/SettingsPages/GraphicsPage" unique_id=238776646]
+layout_mode = 2
+text = "BACK"
+
 [node name="ExitDialog" type="ConfirmationDialog" parent="." unique_id=1431644987]
 oversampling_override = 1.0
 title = "ABANDON SQUAD"
@@ -324,7 +413,11 @@ dialog_text = "Are you sure you want to abandon your squadmates?
 cancel_button_text = "NO"
 
 [node name="VideoConfirmDialog" type="ConfirmationDialog" parent="." unique_id=1388018522]
+oversampling_override = 1.0
 title = "Keep Display Settings?"
+position = Vector2i(0, 36)
+size = Vector2i(233, 100)
+visible = true
 ok_button_text = "KEEP SETTINGS"
 dialog_text = "Keep these display settings?"
 dialog_close_on_escape = false
@@ -342,7 +435,10 @@ autostart = true
 [connection signal="pressed" from="OptionsOverlay/OptionsLayout/CategoryButtons/VideoSettingsButton" to="." method="_on_video_settings_button_pressed"]
 [connection signal="item_selected" from="OptionsOverlay/OptionsLayout/SettingsPages/VideoPage/DisplayModeOption" to="." method="_on_display_mode_option_item_selected"]
 [connection signal="item_selected" from="OptionsOverlay/OptionsLayout/SettingsPages/VideoPage/ResolutionOption" to="." method="_on_resolution_option_item_selected"]
+[connection signal="item_selected" from="OptionsOverlay/OptionsLayout/SettingsPages/VideoPage/VSyncOption" to="." method="_on_vsync_option_item_selected"]
+[connection signal="item_selected" from="OptionsOverlay/OptionsLayout/SettingsPages/VideoPage/FrameRateLimitOption" to="." method="_on_frame_rate_limit_option_item_selected"]
 [connection signal="pressed" from="OptionsOverlay/OptionsLayout/SettingsPages/VideoPage/ResetSettingsButton" to="." method="_on_reset_settings_button_pressed"]
+[connection signal="pressed" from="OptionsOverlay/OptionsLayout/SettingsPages/GraphicsPage/GraphicsBackButton" to="." method="_on_graphics_back_button_pressed"]
 [connection signal="canceled" from="VideoConfirmDialog" to="." method="_on_video_confirm_dialog_canceled"]
 [connection signal="confirmed" from="VideoConfirmDialog" to="." method="_on_video_confirm_dialog_confirmed"]
 [connection signal="timeout" from="VideoConfirmTimer" to="." method="_on_video_confirm_timer_timeout"]
